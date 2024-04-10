@@ -1,0 +1,29 @@
+@import 'styles/variables';
+@import 'styles/breakpoints';
+
+.modal {
+  display: flex;
+  flex-flow: column nowrap;
+  justify-content: space-between;
+  position: fixed;
+  z-index: 8;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  padding: 4 * $mu;
+  border-radius: 6px;
+  background-color: $neutral;
+  box-shadow: 0px 6px 10px rgba(2, 3, 3, 0.03), 0px 1px 18px rgba(2, 3, 3, 0.02),
+    0px 3px 5px rgba(2, 3, 3, 0.04), 0 0 0 999px rgba(0, 0, 0, 0.2);
+  height: auto;
+}
+
+.overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100vh;
+  background-color: rgba(128,128,128,0.5);
+  z-index: 7;
+}

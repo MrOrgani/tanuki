@@ -1,0 +1,26 @@
+@import "styles/variables";
+@import "styles/breakpoints";
+
+.mainContainer {
+  display: flex;
+  flex-wrap: wrap;
+  background-color: #fafbfc;
+
+  .head {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    .filters {
+      display: flex;
+      align-items: center;
+      gap: 1.5 * $mu;
+
+      .periodSelector {
+        width: 125px;
+        height: 50px;
+      }
+    }
+  }
+}

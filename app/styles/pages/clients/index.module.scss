@@ -1,0 +1,16 @@
+@import "styles/variables";
+@import "styles/breakpoints";
+
+.clientsPage {
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+  gap: 2 * $mu;
+
+  .head {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 7 * $mu;
+    align-items: center;
+  }
+}

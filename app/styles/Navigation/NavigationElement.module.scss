@@ -1,0 +1,68 @@
+@import "styles/variables";
+@import "styles/breakpoints";
+
+.navElement {
+  list-style-type: none;
+  border-radius: 5px;
+
+  a {
+    width: 100%;
+    color: $neutral-60;
+    padding: 1.5 * $mu 2 * $mu;
+    display: flex;
+    gap: $mu;
+    align-items: center;
+    font-weight: 600;
+    position: relative;
+
+    @include media-breakpoint-max("md") {
+      color: transparent;
+      display: block;
+      width: fit-content;
+      padding: $mu 1.5 * $mu;
+
+      span {
+        display: none;
+      }
+
+      &:hover {
+        span {
+          display: inline;
+          position: absolute;
+          bottom: -15px;
+          left: 50%;
+          transform: translateX(-50%);
+        }
+      }
+    }
+  }
+
+  svg {
+    width: 20px;
+    color: $neutral-60;
+  }
+
+  &:hover {
+    svg {
+      color: $primary-40;
+    }
+
+    a {
+      color: $primary-40;
+    }
+  }
+
+  &.current {
+    background-color: $neutral;
+
+    a {
+      color: $primary-40;
+      @include media-breakpoint-max("lg") {
+        transform: unset;
+      }
+    }
+    svg {
+      color: $primary-40;
+    }
+  }
+}

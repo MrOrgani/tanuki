@@ -1,0 +1,159 @@
+@import "styles/variables";
+@import "styles/utils";
+
+$icon-col-size: 80px;
+$col-nb: 4;
+
+.tableSection {
+    width: 100%;
+    margin: 4 * $mu 0;
+
+    h2 {
+        margin: 45px 0;
+    }
+
+    h3 {
+        font-size: 22px;
+    }
+
+    ul {
+        list-style-type: none;
+    }
+}
+
+.head {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    & > div {
+        display: flex;
+        gap: 2 * $mu;
+
+        button {
+            display: flex;
+            align-items: center;
+            gap: 1.5 * $mu;
+        }
+    }
+}
+
+.searchContainer {
+    width: 35%;
+    margin-bottom: 5 * $mu;
+}
+
+.emptyList {
+    width: 100%;
+    height: 150px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 1.5 * $mu;
+    background-color: #fff;
+    border-radius: 8px;
+    border: 1px solid rgba(0, 0, 0, 0.12);
+    font-size: $font-size-sm;
+}
+
+.mainList {
+    width: 100%;
+    background-color: #fff;
+    color: rgba(0, 0, 0, 0.87);
+    font-size: $font-size-sm;
+
+    .mainItem,
+    .innerItem {
+        display: flex;
+        align-items: center;
+        border-bottom: 1px solid rgba(0, 0, 0, 0.12);
+        color: rgba(0, 0, 0, 0.87);
+
+        .expandIcon {
+            width: $icon-col-size;
+            text-align: center;
+            button {
+                background: none;
+                border: none;
+                cursor: pointer;
+            }
+        }
+
+        .employeeWrapper {
+            display: flex;
+            align-items: center;
+            gap: 1 * $mu;
+        }
+
+        .npsTag {
+            @include tags;
+            font-weight: 400;
+            padding: 0.5 * $mu 1 * $mu;
+            border-radius: 4px;
+            width: fit-content;
+        }
+    }
+
+    .mainItem {
+        &.active {
+            background-color: #f7f6f9;
+        }
+
+        .col {
+            display: flex;
+            flex-direction: column;
+            gap: 0.75 * $mu;
+            padding: $mu 1.5 * $mu;
+
+            .colTitle {
+                font-size: $font-size-xs;
+                color: rgba(0, 0, 0, 0.6);
+                font-weight: 600;
+            }
+        }
+    }
+
+    .innerList {
+        width: 100%;
+
+        .innerItem {
+            &:hover {
+                background-color: $primary-10;
+            }
+            .col {
+                padding: 1.5 * $mu;
+            }
+        }
+    }
+
+    .emptyInnerList {
+        width: 100%;
+        padding: 1.5 * $mu;
+        padding-left: $icon-col-size + 1.5 * $mu;
+        border-bottom: 1px solid rgba(0, 0, 0, 0.12);
+        color: #9f9f9f;
+
+        p {
+            display: flex;
+            align-items: center;
+            gap: 1.5 * $mu;
+        }
+
+        svg path {
+            stroke: #9f9f9f;
+        }
+    }
+}
+
+.col {
+    @for $i from 1 through $col-nb {
+        &:nth-of-type(#{$i}) {
+            flex-basis: calc((100% - $icon-col-size) / $col-nb);
+        }
+    }
+}
+
+.paginationWrapper {
+    padding: 4 * $mu 0;
+}

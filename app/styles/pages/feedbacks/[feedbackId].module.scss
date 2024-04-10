@@ -1,0 +1,152 @@
+@import "styles/variables";
+@import "styles/breakpoints";
+@import "styles/_utils";
+
+.feedbackDetails {
+  display: flex;
+  flex-direction: column;
+  gap: 6 * $mu;
+
+  .levelHead {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  .levelHeadLeft {
+    display: flex;
+    gap: 3 * $mu;
+    align-items: center;
+  }
+
+  .levelHeadRight {
+    display: flex;
+    gap: 2 * $mu;
+
+    button {
+      display: flex;
+      align-items: center;
+      gap: 1.5 * $mu;
+      padding: 0 2.5 * $mu;
+    }
+  }
+
+  .card {
+    background-color: $neutral;
+    border-radius: 8px;
+    border: 1.5px solid $neutral-20;
+    padding: 6 * $mu 8 * $mu 7 * $mu;
+  }
+
+  h2 {
+    font-size: 2rem;
+    margin-bottom: 5 * $mu;
+
+    > span {
+      color: #a4a4a4;
+    }
+  }
+
+  .topCards {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 4 * $mu;
+  }
+
+  .cardHeader {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    margin-bottom: 2 * $mu;
+
+    .leftSection {
+      display: flex;
+      flex-direction: column;
+      gap: 2 * $mu;
+
+      .date {
+        text-transform: capitalize;
+      }
+    }
+  }
+
+  .feedbackBody {
+    display: flex;
+    flex-direction: column;
+    gap: 3 * $mu;
+
+    .taggedValue {
+      padding: $mu 2 * $mu;
+      border-radius: $mu;
+      font-weight: 500;
+      font-size: $font-size-3xl;
+  
+      @include tags;
+    }
+
+    .fieldWrapper {
+      width: 100%;
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      gap: 2.25 * $mu;
+      color: $neutral-90;
+      
+      h3 {
+        display: block;
+        font-size: 1.4rem;
+        font-weight: 700;
+      }
+
+      p {
+        white-space: pre-line;
+        font-size: 17px;
+        line-height: 24px;
+      }
+    }
+  }
+
+  .cta {
+    display: flex;
+    justify-content: flex-end;
+    gap: 3 * $mu;
+    padding: 5 * $mu 10 * $mu 9 * $mu 10 * $mu;
+  }
+}
+
+.deleteModal {
+  width: 600px;
+  font-weight: 600;
+  font-size: 17px;
+  height: auto;
+  gap: 4 * $mu;
+
+  & > div:first-of-type {
+    padding: 0 30px;
+  }
+
+  h1 {
+    font-size: $font-size-2xl;
+  }
+
+  .text {
+    color: #687086;
+    margin-bottom: 2 * $mu;
+  }
+
+  .details {
+    color: $neutral-100;
+    margin-bottom: 3 * $mu;
+  }
+
+  .warning {
+    color: #f9525c;
+    margin-bottom: 2 * $mu;
+    font-size: 0.9em;
+    display: flex;
+    gap: 1 * $mu;
+    align-items: center;
+    justify-content: center;
+  }
+}

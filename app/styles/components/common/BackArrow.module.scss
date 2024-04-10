@@ -1,0 +1,22 @@
+@import 'styles/variables';
+
+.backArrow {
+  all: unset;
+  border: 1px solid #e8ebef;
+  background-color: rgba(0, 0, 0, 0);
+  width: 72px;
+  height: 54px;
+  cursor: pointer;
+  display: block;
+  border-radius: 8px;
+  &:focus {
+    outline: auto;
+  }
+  display: flex;
+  justify-content: center;
+
+  svg {
+    all: unset;
+    padding: 7px;
+  }
+}

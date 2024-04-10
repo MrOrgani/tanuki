@@ -1,0 +1,29 @@
+@mixin tags {
+    &.neutral {
+        background-color: $bg-tag-neutral;
+        color: $tag-neutral;
+    }
+    &.positive {
+        background-color: $bg-tag-positive;
+        color: $tag-positive;
+    }
+    &.moderate {
+        background-color: $bg-tag-moderate;
+        color: $tag-moderate;
+    }
+    &.negative {
+        background-color: $bg-tag-negative;
+        color: $tag-negative;
+    }
+}
+
+@mixin mandatory-symbol {
+    &::after {
+        content: "*";
+        position: relative;
+        color: #f9525c;
+        font-size: 0.9em;
+        bottom: 1px;
+        left: 1px;
+    }
+}

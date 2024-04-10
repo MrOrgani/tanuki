@@ -1,0 +1,144 @@
+@import "styles/variables";
+@import "styles/utils";
+
+.feedbackForm {
+  .headWrapper {
+    display: flex;
+    align-items: center;
+    gap: 3 * $mu;
+    margin-bottom: 3.5 * $mu;
+  }
+
+  .infoMandatory {
+    margin-bottom: 4 * $mu;
+    font-style: italic;
+    font-weight: 400;
+    color: $neutral-90;
+
+    &::before {
+      content: "*";
+      position: relative;
+      color: #f9525c;
+      margin: 0 0.5 * $mu 0 0.25 * $mu;
+    }
+  }
+
+  form {
+    display: flex;
+    flex-direction: column;
+    gap: 5 * $mu;
+    max-width: 875px;
+    min-width: 300px;
+    margin-bottom: 5 * $mu;
+
+    & > fieldset {
+      display: flex;
+      flex-direction: column;
+      gap: 3 * $mu;
+      width: 100%;
+
+      legend {
+        margin-bottom: 4 * $mu;
+        padding: 0;
+
+        h2 {
+          font-size: $font-size-2xl;
+          font-weight: 700;
+          color: $neutral-90;
+          margin-bottom: $mu;
+        }
+
+        h3 {
+          font-size: $font-size-lg;
+          font-weight: 700;
+          color: $neutral-50;
+        }
+      }
+    }
+  }
+
+  .formRow {
+    display: flex;
+    flex-direction: column;
+    gap: 3 * $mu;
+    width: 100%;
+
+    label {
+      font-size: 1.065rem; // 17px
+      font-weight: 500;
+      color: $neutral-90;
+
+      &.mandatory {
+        @include mandatory-symbol;
+      }
+    }
+
+    .fieldHead {
+      display: flex;
+      flex-direction: column;
+      gap: 0.5 * $mu;
+
+      & > p {
+        font-size: 14px;
+        font-weight: 500;
+        color: $neutral-70;
+      }
+    }
+  }
+
+  .formField {
+    width: 100%;
+    [class="form-field"] {
+      height: auto;
+    }
+
+    .error {
+      display: inline-block;
+      font-size: $font-size-sm;
+      font-weight: 400;
+      color: #f9525c;
+      margin-top: 0.75 * $mu;
+    }
+  }
+
+  .gradeField {
+    label[class*="rate-input"] {
+      font-size: 16px;
+    }
+    padding-top: 3.5 * $mu;
+  }
+
+  .cta {
+    width: 100%;
+    display: flex;
+    gap: 3 * $mu;
+    justify-content: flex-end;
+  }
+
+  .headerClient {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    position: relative;
+
+    button {
+      position: absolute;
+      padding: 0;
+      right: 0;
+      top: 4px;
+    }
+  }
+
+  .rail {
+    background: linear-gradient(to right, $negative-rate, $moderate-rate 60%, $positive-rate);
+  }
+
+  .track {
+    background: none;
+    border: none;
+  }
+
+  .markLabel {
+    color: $neutral-50;
+  }
+}

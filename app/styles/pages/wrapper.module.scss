@@ -1,0 +1,32 @@
+@import "styles/variables";
+@import "styles/breakpoints";
+
+.container {
+  height: 100vh;
+  display: flex;
+
+  .contentWrapper {
+    overflow-y: auto;
+    flex: 1;
+    padding: 10 * $mu 13 * $mu 4 * $mu;
+    height: 100vh;
+
+    main {
+      max-width: 1130px;
+    }
+  }
+
+  @include media-breakpoint-max("xl") {
+    .contentWrapper {
+      padding: 10 * $mu 10 * $mu 3 * $mu;
+    }
+  }
+
+  @include media-breakpoint-max("lg") {
+    flex-direction: column;
+
+    .contentWrapper {
+      padding: 6 * $mu 6 * $mu 4 * $mu;
+    }
+  }
+}

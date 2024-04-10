@@ -1,0 +1,40 @@
+@import "styles/variables";
+
+.clientCard {
+	background-color: $neutral;
+	border-radius: $radius-md;
+	border: 1.5px solid #f4f4f4;
+	padding: 4 * $mu;
+	color: $neutral-80;
+
+	h3 {
+		margin-bottom: 4 * $mu;
+		font-size: $font-size-2xl;
+		color: $neutral-100;
+	}
+}
+
+.container {
+	display: flex;
+	gap: 5 * $mu;
+}
+
+.content {
+	display: flex;
+	flex-direction: column;
+	font-size: $font-size-xl;
+	gap: 2.5 * $mu;
+	font-weight: 500;
+	color: $neutral-80;
+}
+
+.infoType {
+	color: $neutral-90;
+	font-weight: 700;
+	margin-right: 2px;
+}
+
+.unspecified {
+	color: #ADBFCB;
+	font-weight: 400;
+}

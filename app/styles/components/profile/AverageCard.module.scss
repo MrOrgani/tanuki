@@ -1,0 +1,26 @@
+@import "styles/variables";
+@import "styles/utils";
+
+.averageCard {
+    padding: 4.5 * $mu 5 * $mu;
+    border-radius: $radius-md;
+    border: 1.5px solid #f4f4f4;
+    background-color: #fff;
+
+    h3 {
+        margin-bottom: 4 * $mu;
+        font-size: $font-size-2xl;
+        color: $neutral-100;
+    }
+}
+
+.content {
+    padding: 2 * $mu 0;
+    .nps {
+        @include tags;
+        font-weight: 500;
+        padding: $mu 3.5 * $mu;
+        border-radius: $radius-md;
+        font-size: 32px;
+    }
+}

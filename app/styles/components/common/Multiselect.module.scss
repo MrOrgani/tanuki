@@ -1,0 +1,186 @@
+@import "styles/variables";
+
+.Multiselect {
+  font-size: $font-size-sm;
+  width: 235px;
+  position: relative;
+  display: inline-block;
+  border-radius: $radius-md;
+  z-index: 3;
+  min-width: 230px;
+
+  &.primary {
+    input {
+      border: 1px solid $primary-40;
+      color: $primary-40;
+      font-weight: 700;
+
+      &::placeholder {
+        color: $primary-40;
+        font-weight: 700;
+        opacity: 1; // Quick fix for Firefox
+      }
+    }
+
+    .chevron {
+      path {
+        stroke: $primary-40;
+      }
+    }
+  }
+
+  &.default {
+    input {
+      color: #666565;
+      border: #e6e8ea 1px solid;
+      font-weight: 500;
+
+      &::placeholder {
+        color: #666565;
+        font-weight: 500;
+        opacity: 1;
+      }
+    }
+
+    .chevron {
+      path {
+        stroke: #666565;
+      }
+    }
+  }
+
+  input {
+    font-family: $font-primary;
+    padding: 0 7 * $mu 0 2.5 * $mu;
+    background-color: $neutral;
+    height: 50px;
+    width: 100%;
+    border-radius: $radius-sm;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    white-space: nowrap;
+    cursor: pointer;
+  }
+
+  hr {
+    border: $primary-40 1px solid;
+    margin: 0;
+  }
+
+  .dropdown {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: $mu;
+    position: absolute;
+    background-color: $neutral;
+    border-radius: 0 0 $radius-md $radius-md;
+    border: 1px solid $primary-40;
+    border-top: none;
+    padding: 0 $mu $mu $mu;
+  }
+
+  .options {
+    display: flex;
+    flex-direction: column;
+    gap: $mu;
+    &.scrollable {
+      height: 124px;
+      overflow-y: auto;
+
+      &::-webkit-scrollbar {
+        width: 5px;
+      }
+
+      &::-webkit-scrollbar-track {
+        background-color: transparent;
+      }
+
+      &::-webkit-scrollbar-thumb {
+        background: #e0e0e0;
+        border-radius: 20px;
+      }
+
+      &::-webkit-scrollbar-thumb:hover {
+        background: #767676;
+      }
+    }
+  }
+
+  .option {
+    border-radius: $radius-md;
+    height: 36px;
+    display: flex;
+    align-items: center;
+    padding: $mu;
+    color: #666565;
+    cursor: pointer;
+
+    &:hover {
+      background-color: $primary-10;
+    }
+    &.selected {
+      background-color: $primary-10;
+      color: $primary-40;
+    }
+  }
+
+  .selectedOptions {
+    display: flex;
+    align-items: center;
+    color: #666565;
+    & .chevron {
+      cursor: pointer;
+      position: relative;
+      right: 4 * $mu;
+      margin-right: -4 * $mu;
+
+      &.expanded {
+        transform: rotate(180deg);
+      }
+    }
+  }
+
+  .unselectAll {
+    font-family: $font-primary;
+    cursor: pointer;
+    color: #428bd1;
+    border: 0;
+    background-color: unset;
+    text-align: left;
+    font-weight: 500;
+    padding-bottom: $mu;
+  }
+
+  &.expanded {
+    input {
+      border: 1px $primary-40 solid;
+      border-bottom: none;
+      border-radius: $radius-sm $radius-sm 0 0;
+    }
+  }
+
+  .searchBox {
+    text-align: end;
+    margin-bottom: -18px;
+
+    input {
+      height: 26px;
+      border: 0.85px solid #d5dbe2;
+      border-radius: 3.4px;
+      font-size: 0.7rem;
+      padding: 0 3 * $mu 0 $mu;
+      cursor: unset;
+
+      &::placeholder {
+        color: #a6aebc;
+      }
+    }
+
+    svg {
+      position: relative;
+      bottom: 21px;
+      right: 0.5 * $mu;
+    }
+  }
+}

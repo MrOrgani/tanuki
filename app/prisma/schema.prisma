@@ -1,0 +1,118 @@
+enum RoleType {
+  admin
+  manager
+}
+
+enum Startup {
+  campus
+  central
+  epic
+  source
+  atom
+  summit
+}
+
+generator client {
+  provider      = "prisma-client-js"
+  binaryTargets = ["native"]
+}
+
+datasource db {
+  provider = "mongodb"
+  url      = env("DATABASE_URL")
+}
+
+type FeedbacksAnswers {
+  areasOfImprovement String?
+  grade              Float
+  positives          String?
+  context            String?
+  objectives         String?
+  details            String?
+}
+
+model Account {
+  id               String    @id @default(auto()) @map("_id") @db.ObjectId
+  accountManager   Employee? @relation(fields: [accountManagerId], references: [id])
+  accountManagerId String?
+  name             String
+  clients          Client[]
+
+  @@map("accounts")
+}
+
+model Client {
+  id               String            @id @default(auto()) @map("_id") @db.ObjectId
+  name             String
+  email            String?
+  date             String?
+  details          String?
+  account          Account           @relation(fields: [accountId], references: [id])
+  accountId        String            @db.ObjectId
+  feedbacks        Feedback[]
+  deletedFeedbacks FeedbackArchive[]
+
+  @@map("clients")
+}
+
+model Feedback {
+  id         String           @id @default(auto()) @map("_id") @db.ObjectId
+  answers    FeedbacksAnswers
+  client     Client?          @relation(fields: [clientId], references: [id])
+  clientId   String?          @db.ObjectId
+  date       DateTime         @db.Date
+  employee   Employee         @relation(fields: [employeeId], references: [id])
+  employeeId String
+  createdAt  DateTime         @default(now()) @db.Date
+  updatedAt  DateTime?        @updatedAt @db.Date
+  createdBy  String?
+  updatedBy  String?
+
+  @@map("feedbacks")
+}
+
+model FeedbackArchive {
+  id         String           @id @default(auto()) @map("_id") @db.ObjectId
+  answers    FeedbacksAnswers
+  client     Client?          @relation(fields: [clientId], references: [id])
+  clientId   String?          @db.ObjectId
+  date       DateTime         @db.Date
+  employee   Employee         @relation(fields: [employeeId], references: [id])
+  employeeId String
+  createdAt  DateTime         @default(now()) @db.Date
+  updatedAt  DateTime?        @updatedAt @db.Date
+  createdBy  String?
+  updatedBy  String?
+
+  @@map("feedbacks_archive")
+}
+
+model Employee {
+  id                String            @id @map("_id")
+  email             String
+  luccaID           Int
+  name              String
+  position          String
+  pictureURL        String
+  manager           Employee?         @relation("ManagerManagee", fields: [managerId], references: [id], onDelete: NoAction, onUpdate: NoAction)
+  managerId         String?
+  managedAccounts   Account[]
+  feedbacks         Feedback[]
+  deletedFeedbacks  FeedbackArchive[]
+  managees          Employee[]        @relation("ManagerManagee")
+  startup           Startup
+  contractStartDate DateTime?         @db.Date
+  contractEndDate   DateTime?         @db.Date
+
+  @@map("employees")
+}
+
+model User {
+  id         String   @id @map("_id")
+  email      String
+  name       String
+  pictureURL String
+  role       RoleType
+
+  @@map("users")
+}

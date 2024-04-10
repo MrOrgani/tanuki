@@ -1,0 +1,91 @@
+@import "styles/variables";
+@import "styles/utils";
+
+$icon-col-size: 80px;
+$col-nb: 4;
+
+.tableSection {
+  width: 100%;
+  margin: 4 * $mu 0;
+
+  h2 {
+    margin: 45px 0;
+  }
+
+  h3 {
+    font-size: 22px;
+  }
+
+  ul {
+    list-style-type: none;
+  }
+}
+
+.head {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  & > div {
+    display: flex;
+    gap: 2 * $mu;
+
+    button {
+      display: flex;
+      align-items: center;
+      gap: 1.5 * $mu;
+    }
+  }
+}
+
+.tableContainer {
+  padding: 3.5 * $mu 0;
+
+  .table {
+    font-size: $font-size-sm;
+    border: 1px solid rgba(0, 0, 0, 0.12);
+    box-shadow: none;
+
+    thead {
+      tr {
+        background-color: #f6f6f6;
+
+        th {
+          padding: $mu 1.5 * $mu;
+          button {
+            font-family: $font-primary;
+            font-size: $font-size-base;
+            font-weight: 500;
+            justify-content: center;
+            gap: $mu;
+          }
+        }
+      }
+    }
+
+    tbody {
+      td {
+        padding: 0;
+        font-family: $font-primary;
+        text-align: center;
+        color: rgba(0, 0, 0, 0.87);
+        padding: 1.5 * $mu;
+      }
+
+      .avatarCell {
+        display: flex;
+        align-items: center;
+        gap: 1.5 * $mu;
+        padding-left: 3 * $mu;
+      }
+
+      .npsCell {
+        width: fit-content;
+        border-radius: 4px;
+        padding: 0.25 * $mu $mu;
+
+        @include tags;
+      }
+    }
+  }
+}

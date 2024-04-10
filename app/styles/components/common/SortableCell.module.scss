@@ -1,0 +1,44 @@
+@import "styles/variables";
+
+.sortableCell {
+  background-color: transparent;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  .sortBtn {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    cursor: pointer;
+    background: none;
+    outline: none;
+    border: none;
+
+    &:focus,
+    &:hover {
+      .label {
+        text-decoration: underline;
+      }
+    }
+
+    .icon {
+      display: flex;
+      flex-direction: column;
+      position: relative;
+
+      svg {
+        position: relative;
+        color: rgba(0, 0, 0, 0.12);
+        &.iconUp {
+          top: 7px;
+        }
+
+        &.iconDown {
+          bottom: 7px;
+        }
+      }
+    }
+  }
+}

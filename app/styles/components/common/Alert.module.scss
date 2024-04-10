@@ -1,0 +1,70 @@
+@import 'styles/variables';
+@import 'styles/breakpoints';
+
+.alert {
+  z-index: 10;
+  position: fixed;
+  top: 8 * $mu;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  padding: $mu (2 * $mu);
+  margin: (2 * $mu) 1.5 * $mu;
+  width: 350px;
+  border-radius: 4px;
+  align-items: center;
+  border: 2px solid transparent;
+  margin: auto;
+  @include media-breakpoint-up(md) {
+    padding: (1.5 * $mu) (4 * $mu);
+    justify-content: center;
+    width: 450px;
+  }
+  @include media-breakpoint-up(lg) {
+    width: 1056px;
+  }
+
+  > :nth-child(1),
+  :nth-child(3) {
+    min-width: 4 * $mu;
+    min-height: 4 * $mu;
+    width: 4 * $mu;
+    height: 4 * $mu;
+    margin: 1 * $mu;
+  }
+
+  svg.icon {
+    min-width: 4 * $mu;
+    min-height: 4 * $mu;
+    width: 4 * $mu;
+    height: 4 * $mu;
+    color: white;
+
+    @include media-breakpoint-up(md) {
+      min-width: 5 * $mu;
+      min-height: 5 * $mu;
+      width: 5 * $mu;
+      height: 5 * $mu;
+    }
+  }
+  p {
+    font-size: 0.86rem;
+    text-align: center;
+    color: white;
+    align-self: center;
+    @include media-breakpoint-up(md) {
+      font-size: 1rem;
+    }
+  }
+}
+.info {
+  background-color: #699bce;
+}
+
+.error {
+  background-color: #e16276;
+}
+
+.done {
+  background-color: #69d4a2;
+}

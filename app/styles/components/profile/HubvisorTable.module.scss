@@ -1,0 +1,49 @@
+@import "styles/variables";
+@import "styles/utils";
+
+.hubvisorTable {
+    font-size: $font-size-sm;
+    border: 1px solid rgba(0, 0, 0, 0.12);
+    box-shadow: none !important;
+
+    thead {
+        tr {
+            background-color: #f6f6f6;
+
+            th {
+                background-color: transparent;
+                padding: $mu 2 * $mu;
+                button {
+                    font-weight: 500;
+                    font-family: $font-primary;
+                    font-size: $font-size-base;
+                }
+            }
+        }
+    }
+
+    tbody {
+        td {
+            letter-spacing: 0.25px;
+            padding: 0;
+            font-family: $font-primary;
+            color: rgba(0, 0, 0, 0.87);
+            padding: $mu 2 * $mu;
+        }
+
+        .avatarCell {
+            display: flex;
+            align-items: center;
+            gap: $mu;
+        }
+
+        .npsCell {
+            width: fit-content;
+            border-radius: 4px;
+            padding: 0.25 * $mu $mu;
+            font-weight: 500;
+
+            @include tags;
+        }
+    }
+}

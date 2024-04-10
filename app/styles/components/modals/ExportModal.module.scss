@@ -1,0 +1,48 @@
+@import 'styles/variables';
+@import 'styles/breakpoints';
+
+.modal {
+  width: 600px;
+  height: auto;
+
+  h2 {
+    color: $neutral-100;
+    margin-bottom: 1.5 * $mu;
+  }
+
+  p {
+    font-size: 17px;
+    font-weight: 600;
+    color: #687086;
+  }
+
+  @include media-breakpoint-max('md') {
+    width: 90vw;
+    height: unset;
+  }
+}
+
+.content {
+  padding: 2.5 * $mu 0;
+  @include media-breakpoint-max('md') {
+    height: unset;
+  }
+
+  .form {
+    display: flex;
+    flex-direction: column;
+    gap: 2.5 * $mu;
+  }
+}
+
+.cta {
+  align-self: flex-end;
+  display: flex;
+  justify-content: flex-end;
+  gap: 2 * $mu;
+  padding: 3 * $mu 0;
+  @include media-breakpoint-max('md') {
+    justify-content: center;
+    width: 100%;
+  }
+}

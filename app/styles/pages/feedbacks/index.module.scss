@@ -1,0 +1,103 @@
+@import 'styles/variables';
+@import 'styles/breakpoints';
+@import 'styles/utils';
+
+.feedbacksPage {
+  display: flex;
+  flex-direction: column;
+
+  .head {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 70px;
+    align-items: center;
+
+    .actions {
+      display: flex;
+      gap: 2 * $mu;
+      align-items: center;
+
+      .periodSelector {
+        width: 150px;
+      }
+    }
+  }
+
+  .managerSearchOption {
+    display: flex;
+    gap: $mu;
+  }
+}
+
+.toolbar {
+  display: flex;
+  gap: 3 * $mu;
+  height: 50px;
+  width: 100%;
+  justify-content: space-between;
+
+  .search {
+    display: flex;
+    gap: 3 * $mu;
+    height: 50px;
+    max-width: 909px;
+  }
+
+  .searchContainer {
+    flex-basis: 45%;
+  }
+}
+
+.feedbacksTableContainer {
+  padding: 3.5 * $mu 0;
+
+  .feedbacksTable {
+    font-size: $font-size-sm;
+    border: 1px solid rgba(0, 0, 0, 0.12);
+    box-shadow: none;
+
+    thead {
+      tr {
+        background-color: #f6f6f6;
+
+        th {
+          background-color: transparent;
+          padding: $mu 2 * $mu;
+          button {
+            font-weight: 500;
+            font-family: $font-primary;
+            font-size: $font-size-sm;
+          }
+        }
+      }
+    }
+
+    tbody {
+      td {
+        letter-spacing: 0.25px;
+        font-family: $font-primary;
+        color: rgba(0, 0, 0, 0.87);
+        padding: 0;
+      }
+
+      .avatarCell {
+        display: flex;
+        align-items: center;
+        gap: $mu;
+      }
+
+      .npsCell {
+        width: fit-content;
+        border-radius: 4px;
+        padding: 0.25 * $mu $mu;
+        font-weight: 500;
+
+        @include tags;
+      }
+    }
+  }
+
+  .paginationWrapper {
+    padding: 4 * $mu 0;
+  }
+}

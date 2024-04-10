@@ -1,0 +1,21 @@
+@import 'styles/variables';
+
+.errorPage {
+  display: flex;
+  flex-direction: column;
+  gap: 6 * $mu;
+
+  .info {
+    display: flex;
+    flex-direction: column;
+    gap: 2 * $mu;
+  }
+
+  .cta {
+    width: 500px;
+    display: flex;
+    flex-direction: column;
+    gap: 4 * $mu;
+    align-items: center;
+  }
+}

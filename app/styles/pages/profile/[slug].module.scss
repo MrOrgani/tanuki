@@ -1,0 +1,43 @@
+@import "styles/variables";
+@import "styles/utils";
+
+.profile {
+    display: flex;
+    flex-direction: column;
+    gap: 6 * $mu;
+}
+
+.head {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    .left {
+        display: flex;
+        align-items: center;
+        gap: 2.5 * $mu;
+    }
+
+    .right {
+        width: 150px;
+    }
+}
+
+.cards {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 4 * $mu;
+}
+
+.tableContainer {
+    display: flex;
+    flex-direction: column;
+    gap: 3 * $mu;
+    margin-bottom: 5 * $mu;
+
+    .tableHead {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+    }
+}

@@ -1,0 +1,46 @@
+@import "styles/variables";
+
+.hubvisorCard {
+    padding: 4 * $mu;
+    border-radius: $radius-md;
+    border: 1.5px solid #f4f4f4;
+    background-color: #fff;
+
+    h3 {
+        margin-bottom: 4 * $mu;
+        font-size: $font-size-2xl;
+        color: $neutral-100;
+    }
+}
+
+.content {
+    display: flex;
+    align-items: center;
+    gap: 4 * $mu;
+    color: $neutral-80;
+    font-weight: 500;
+
+    .right {
+        display: flex;
+        flex-direction: column;
+        gap: 2 * $mu;
+        font-size: $font-size-xl;
+
+        .name {
+            font-weight: 700;
+        }
+
+        .date {
+            color: $neutral-50;
+            font-weight: 400;
+        }
+
+        .manager {
+            margin-top: 2 * $mu;
+            height: 40px;
+            .bold {
+                font-weight: 700;
+            }
+        }
+    }
+}

@@ -1,0 +1,47 @@
+@import 'styles/variables';
+
+.hubCard {
+	background-color: $neutral;
+	border-radius: $radius-md;
+	border: 1.5px solid #F4F4F4;
+	padding: 4 * $mu;
+	color: $neutral-80;
+
+	h3 {
+		margin-bottom: 4 * $mu;
+		font-size: $font-size-2xl;
+		color: $neutral-100;
+	}
+
+	button {
+		margin-top: 2 * $mu;
+		height: 40px;
+		padding: 0 4.5 * $mu;
+	}
+}
+
+.container {
+	display: flex;
+	align-items: center;
+	gap: 4 * $mu;
+}
+
+.content {
+	display: flex;
+	flex-direction: column;
+	font-size: $font-size-xl;
+	gap: 2 * $mu;
+}
+
+.hubName {
+	font-weight: 700;
+}
+
+.hubPosition {
+	font-weight: 500;
+}
+
+.hubArrival {
+	font-weight: 400;
+	color: #8DA4B3;
+}

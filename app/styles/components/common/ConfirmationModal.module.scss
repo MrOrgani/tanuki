@@ -1,0 +1,58 @@
+@import "styles/variables";
+@import "styles/breakpoints";
+
+.overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100vh;
+  background-color: rgba(128, 128, 128, 0.5);
+  z-index: 7;
+}
+
+.modal {
+  display: flex;
+  flex-flow: column nowrap;
+  justify-content: space-between;
+  position: fixed;
+  z-index: 8;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  padding: 4 * $mu;
+  width: 750px;
+  gap: 11 * $mu;
+  border-radius: 6px;
+  background-color: $neutral;
+  font-size: 1.4rem;
+  box-shadow: 0px 6px 10px rgba(2, 3, 3, 0.03), 0px 1px 18px rgba(2, 3, 3, 0.02), 0px 3px 5px rgba(2, 3, 3, 0.04),
+    0 0 0 999px rgba(0, 0, 0, 0.2);
+
+  .contentContainer {
+    text-align: center;
+    padding: 0 10 * $mu;
+    @include media-breakpoint-max("md") {
+      height: unset;
+      padding: 0;
+    }
+  }
+
+  .cta {
+    align-self: flex-end;
+    display: flex;
+    justify-content: flex-end;
+    gap: 2 * $mu;
+    @include media-breakpoint-max("md") {
+      justify-content: center;
+      width: 100%;
+    }
+  }
+
+  @include media-breakpoint-max("md") {
+    width: 90vw;
+    height: unset;
+    gap: 32px;
+    text-align: center;
+  }
+}

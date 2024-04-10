@@ -1,0 +1,128 @@
+@import "styles/variables";
+
+.button {
+  cursor: pointer;
+  font-family: $font-primary;
+  font-size: 1.1rem;
+  height: 54px;
+  padding: 2 * $mu 4 * $mu;
+  border: 1px solid;
+  border-radius: 6px;
+  white-space: nowrap;
+  font-weight: bold;
+  transition: color 150ms ease-out, background-color 150ms ease-out;
+
+  &.contained:not(:disabled) {
+    &.primary {
+      border-color: $primary-40;
+      background-color: $primary-40;
+      color: $neutral;
+
+      &:hover {
+        background-color: $primary-100;
+        border-color: $primary-100;
+      }
+
+      &:active {
+        transform: translateY(1px);
+      }
+
+      &:focus {
+        background-color: $primary-110;
+        border-color: $primary-110;
+      }
+    }
+
+    &.danger {
+      border-color: $btn-danger;
+      background-color: $btn-danger;
+      color: $neutral;
+
+      &:hover {
+        background-color: $neutral;
+        color: $btn-danger;
+      }
+
+      &:active {
+        transform: translateY(1px);
+      }
+
+      &:focus {
+        outline: 1px solid darken($btn-danger, 10%);
+      }
+    }
+  }
+
+  &.outlined:not(:disabled) {
+    background-color: $neutral;
+
+    &.primary {
+      border-color: $primary-40;
+      color: $primary-40;
+
+      &:hover {
+        color: $neutral;
+        background-color: $primary-100;
+      }
+
+      &:active {
+        color: $neutral;
+        background-color: darken($primary-120, 10%);
+        transform: translateY(1px);
+      }
+
+      &:focus {
+        outline: 1px solid $primary-120;
+      }
+
+    }
+
+    &.danger {
+      border-color: $btn-danger;
+      color: $btn-danger;
+
+      &:hover {
+        color: $neutral;
+        background-color: $btn-danger;
+      }
+
+      &:active {
+        color: $neutral;
+        background-color: darken($btn-danger, 10%);
+        transform: translateY(1px);
+      }
+
+      &:focus {
+        outline: 1px solid $btn-danger;
+      }
+    }
+  }
+
+  &:disabled {
+    cursor: unset;
+    color: $neutral-40;
+    background-color: $neutral-10;
+    border: 1px solid $neutral-40;
+  }
+}
+
+.link {
+  height: 25px;
+  border: none;
+  background-color: $neutral-10;
+  font-family: "Inter";
+  font-weight: $font-weight-3;
+  font-size: $font-size-lg;
+  letter-spacing: -0.4px;
+  text-decoration-line: underline;
+  color: $primary-40;
+
+  &:hover {
+    cursor: pointer;
+    color: $primary-130;
+  }
+
+  &:disabled {
+    color: $neutral-40;
+  }
+}

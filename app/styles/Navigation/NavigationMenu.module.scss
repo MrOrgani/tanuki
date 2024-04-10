@@ -1,0 +1,75 @@
+@import "styles/variables";
+@import "styles/breakpoints";
+
+.navigationMenu {
+  height: 100vh;
+  width: $width-navmenu-desktop;
+  background: #f7f6f9;
+  padding: 3 * $mu 3 * $mu $mu;
+  display: flex;
+  flex-flow: column nowrap;
+  gap: 6 * $mu;
+
+  nav {
+    flex: 1;
+  }
+
+  ul {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5 * $mu;
+  }
+
+  .logo {
+    display: flex;
+    align-items: center;
+    gap: 1.75 * $mu;
+    font-family: "Roobert", sans-serif;
+    color: #0f72d3;
+    text-decoration: none;
+
+    .icon {
+      width: 37px;
+      height: auto;
+    }
+
+    .title {
+      font-weight: 600;
+      font-size: 25px;
+    }
+  }
+
+  @include media-breakpoint-max("lg") {
+    width: 100vw;
+    top: 0;
+    flex-direction: row;
+    height: $height-navmenu-handheld;
+    align-items: center;
+    padding: 3 * $mu 2 * $mu;
+    justify-content: space-between;
+
+    footer {
+      display: none;
+    }
+
+    nav {
+      flex: none;
+      width: fit-content;
+      padding: 0 2 * $mu;
+    }
+
+    ul {
+      flex-direction: row;
+    }
+  }
+
+  @include media-breakpoint-max("md") {
+    nav {
+      padding: 0;
+    }
+
+    ul {
+      gap: $mu;
+    }
+  }
+}

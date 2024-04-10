@@ -1,0 +1,78 @@
+@import 'styles/fonts';
+@import 'styles/variables';
+@import 'styles/breakpoints';
+
+:root {
+  //colors
+  --primary-40: #{$primary-40};
+
+  //font sizes
+  --font-size-base: #{$font-size-base};
+  --font-size-lg: #{$font-size-lg};
+
+  //font weights
+  --font-weight-5: #{$font-weight-5};
+}
+
+* {
+  box-sizing: border-box;
+}
+html,
+body {
+  width: 100%;
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  font-family: $font-primary;
+  font-size: 14px;
+  min-width: 320px;
+  @include media-breakpoint-up(md) {
+    font-size: 16px;
+  }
+  background-color: #fafbfc;
+}
+
+h1,
+h2,
+h3,
+h4,
+p {
+  padding: 0;
+  margin: 0;
+}
+
+h1 {
+  font-size: 2rem;
+  line-height: 48px;
+  color: $neutral-90;
+}
+
+h2 {
+  font-size: $font-size-2xl;
+  line-height: 32px;
+  color: $neutral-90;
+}
+
+ul {
+  padding-inline-start: 0;
+  margin: 0;
+}
+a {
+  text-decoration: none;
+}
+
+.card {
+  background-color: $neutral;
+  box-sizing: border-box;
+  border-radius: (2 * $mu);
+  padding: (3 * $mu) (2 * $mu);
+  border: 2px solid $neutral-20;
+}
+.form-field {
+  height: 76px;
+}
+fieldset {
+  border: none;
+  min-width: 0;
+  padding: 0;
+}
