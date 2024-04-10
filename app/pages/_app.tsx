@@ -58,7 +58,6 @@ function App({ Component, pageProps }: AppProps<ProtectedPageProps>) {
                 <NavigationMenu />
                 <div className={styles.contentWrapper}>
                   <Component {...componentProps} />
-                  test
                 </div>
               </div>
             </ModalProvider>
